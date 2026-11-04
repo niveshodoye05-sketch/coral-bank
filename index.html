@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coral Bank | Banking, made simple</title>
+  <meta name="description" content="Coral Bank is a fictional bank created for a UI/UX and web development demo. No real accounts or transactions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <div class="demo-banner">Demo project: Coral Bank is a fictional bank. No real money, accounts or personal data are used.</div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Coral Bank home">
+        <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#0fb5a6"/></linearGradient></defs>
+          <circle cx="20" cy="20" r="18" fill="url(#lg)"/>
+          <path d="M12 22c2-8 10-12 16-8-5 0-9 3-10 8 1 4 5 6 10 5-6 4-15 1-16-5z" fill="#fff"/>
+        </svg>
+        <span>Coral<b>Bank</b></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#personal">Personal</a>
+        <a href="#business">Business</a>
+        <a href="#calculator">Loans</a>
+        <a href="#rates">Rates &amp; Fees</a>
+        <a href="#hub">Knowledge Hub</a>
+        <a href="#offices">Offices</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="btn btn-sm magnetic" id="openLogin">Demo login</button>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <a href="#personal">Personal</a>
+    <a href="#business">Business</a>
+    <a href="#calculator">Loans</a>
+    <a href="#rates">Rates &amp; Fees</a>
+    <a href="#hub">Knowledge Hub</a>
+    <a href="#offices">Offices</a>
+  </aside>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill reveal">New &middot; Tap to pay with Coral Wave</span>
+          <h1 class="reveal" style="--d:.08s">Your money, <span class="rotator" id="rotator"><span>made simple.</span></span></h1>
+          <p class="lead reveal" style="--d:.16s">Save, borrow and pay with a bank built for Mauritius. Open an account in minutes, manage everything from one app and keep your finances safe.</p>
+          <div class="hero-cta reveal" style="--d:.24s">
+            <a href="#calculator" class="btn magnetic">Plan your loan</a>
+            <a href="#app" class="btn btn-ghost magnetic">See the app</a>
+          </div>
+          <ul class="trust reveal" style="--d:.32s">
+            <li><b data-count="240" data-suffix="k+">0</b> customers</li>
+            <li><b data-count="24" data-suffix="/7">0</b> support</li>
+            <li><b data-count="38">0</b> branches</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" style="--d:.2s">
+          <div class="phone tilt" id="heroPhone">
+            <div class="notch"></div>
+            <div class="screen">
+              <div class="scr-head"><small>Good morning, Niv</small><span class="avatar">N</span></div>
+              <div class="balance-card">
+                <small>Total balance</small>
+                <strong id="balanceNum" data-balance="48250.75">Rs 0</strong>
+                <svg viewBox="0 0 200 50" class="spark" preserveAspectRatio="none"><path id="sparkPath" d="M0 40 L20 34 L40 38 L60 24 L80 28 L100 16 L120 22 L140 10 L160 18 L180 6 L200 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="quick">
+                <button><i>&#8594;</i>Send</button><button><i>&#9638;</i>Scan</button><button><i>&#43;</i>Top up</button><button><i>&#9881;</i>More</button>
+              </div>
+              <div class="tx">
+                <div><span class="dot a"></span>Supermarket<em>-Rs 1,250</em></div>
+                <div><span class="dot b"></span>Salary<em class="pos">+Rs 32,000</em></div>
+                <div><span class="dot c"></span>Coffee<em>-Rs 180</em></div>
+              </div>
+            </div>
+          </div>
+          <div class="float-card fc1"><small>Savings goal</small><div class="bar"><span style="--w:72%"></span></div><b>72%</b></div>
+          <div class="float-card fc2"><small>Payment sent</small><b>&#10003; Rs 2,400</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RATES TICKER -->
+    <section class="ticker" id="rates" aria-label="Exchange rates">
+      <div class="ticker-track" id="tickerTrack">
+        <span>Loading rates...</span>
+      </div>
+    </section>
+
+    <!-- PERSONAL -->
+    <section class="section" id="personal">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Personal</span>
+          <h2>Everything for your everyday</h2>
+          <p>Pick what fits your life. Switch tabs to explore.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist">
+          <button class="tab active" data-tab="save" role="tab">Save</button>
+          <button class="tab" data-tab="spend" role="tab">Spend</button>
+          <button class="tab" data-tab="borrow" role="tab">Borrow</button>
+          <span class="tab-ink" id="tabInk"></span>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel active" data-panel="save">
+            <div class="cards3">
+              <article class="card hover-lift"><div class="ico">&#127793;</div><h3>Everyday Saver</h3><p>Earn interest from your first rupee. No lock-in, no hidden fees.</p><a href="#calculator" class="link">Explore &rarr;</a></article>
+              <article class="card hover-lift"><div class="ico">&#127891;</div><h3>Student Account</h3><p>Zero monthly fees, a free debit card and budgeting tools built in.</p><a href="#calculator" class="link">Explore &rarr;</a></article>
+              <article class="card hover-lift"><div class="ico">&#127969;</div><h3>Goal Vault</h3><p>Set a target, automate deposits and watch your progress glow.</p><a href="#calculator" class="link">Explore &rarr;</a></article>
+            </div>
+          </div>
+          <div class="panel" data-panel="spend">
+            <div class="cards-wrap">
+              <div class="credit-stage">
+                <div class="credit tilt c-a"><span class="chip"></span><small>CORAL PLATINUM</small><b>&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4821</b><em>NIV STUDENT</em></div>
+                <div class="credit tilt c-b"><span class="chip"></span><small>CORAL CLASSIC</small><b>&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 9034</b><em>NIV STUDENT</em></div>
+              </div>
+              <div class="cards-info">
+                <h3>Credit cards that suit your lifestyle</h3>
+                <p>From Classic to Platinum: cashback, travel perks and contactless payments with instant freeze controls.</p>
+                <ul class="checks"><li>Up to 3% cashback</li><li>Instant card freeze</li><li>Apple &amp; Google Pay ready</li></ul>
+                <a href="#contact" class="btn magnetic">Apply for a card</a>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-panel="borrow">
+            <div class="cards3">
+              <article class="card hover-lift"><div class="ico">&#127968;</div><h3>Home Loan</h3><p>From <b>5.24%</b> p.a. Make your dream home real with flexible tenures.</p><a href="#calculator" class="link">Calculate &rarr;</a></article>
+              <article class="card hover-lift"><div class="ico">&#127891;</div><h3>Education Loan</h3><p>Study now, repay later. Repayment starts after graduation.</p><a href="#calculator" class="link">Calculate &rarr;</a></article>
+              <article class="card hover-lift"><div class="ico">&#128663;</div><h3>Car Loan</h3><p>Fast approval and competitive rates on new and used vehicles.</p><a href="#calculator" class="link">Calculate &rarr;</a></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="section alt" id="calculator">
+      <div class="container calc-grid">
+        <div class="reveal">
+          <span class="eyebrow">Loan calculator</span>
+          <h2>See your monthly payment instantly</h2>
+          <p>Drag the sliders. The calculation runs in your browser and also through the Python (Flask) API when it is running.</p>
+
+          <div class="field"><label>Loan type</label>
+            <select id="loanType">
+              <option value="5.24">Home loan (5.24%)</option>
+              <option value="6.9">Education loan (6.90%)</option>
+              <option value="7.5">Car loan (7.50%)</option>
+              <option value="9.9">Personal loan (9.90%)</option>
+            </select>
+          </div>
+          <div class="field"><label>Amount <output id="amtOut">Rs 2,000,000</output></label>
+            <input type="range" id="amount" min="50000" max="10000000" step="50000" value="2000000"></div>
+          <div class="field"><label>Term <output id="yrOut">15 years</output></label>
+            <input type="range" id="years" min="1" max="30" step="1" value="15"></div>
+        </div>
+
+        <div class="result-card reveal" style="--d:.12s">
+          <small>Estimated monthly payment</small>
+          <div class="big" id="monthly">Rs 0</div>
+          <div class="donut-wrap">
+            <svg viewBox="0 0 120 120" class="donut">
+              <circle cx="60" cy="60" r="48" class="d-bg"/>
+              <circle cx="60" cy="60" r="48" class="d-fg" id="donut" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="legend">
+              <div><i class="l1"></i>Principal <b id="pOut">-</b></div>
+              <div><i class="l2"></i>Interest <b id="iOut">-</b></div>
+              <div class="muted">Total <b id="tOut">-</b></div>
+            </div>
+          </div>
+          <small class="muted" id="apiState">Using local calculation</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP -->
+    <section class="section dark" id="app">
+      <div class="container app-grid">
+        <div class="app-visual reveal">
+          <div class="phone phone-lg tilt">
+            <div class="notch"></div>
+            <div class="screen dk">
+              <div class="scr-head"><small>Coral Juice</small><span class="avatar">C</span></div>
+              <div class="mini-chart" id="miniChart"></div>
+              <div class="toggle-row"><span>Card controls</span><label class="switch"><input type="checkbox" checked><i></i></label></div>
+              <div class="toggle-row"><span>Online payments</span><label class="switch"><input type="checkbox" checked><i></i></label></div>
+              <div class="toggle-row"><span>Travel mode</span><label class="switch"><input type="checkbox"><i></i></label></div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal" style="--d:.1s">
+          <span class="eyebrow light">Mobile banking</span>
+          <h2>Mobile banking made easy</h2>
+          <p>Bank, pay and manage your money from your phone. Pay bills, top up, track spending and control your cards in a few taps.</p>
+          <ul class="feat">
+            <li><b>Instant transfers</b><span>Send money to friends in seconds.</span></li>
+            <li><b>Smart insights</b><span>See where your money goes each month.</span></li>
+            <li><b>Biometric security</b><span>Face or fingerprint login on every device.</span></li>
+          </ul>
+          <a href="#contact" class="btn btn-light magnetic">Get the app</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS -->
+    <section class="section" id="business">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Business</span>
+          <h2>Built for SMEs, corporates and institutions</h2>
+        </div>
+        <div class="cards3">
+          <article class="card hover-lift reveal"><div class="ico">&#128188;</div><h3>SME</h3><p>Business accounts, POS terminals, invoicing and working capital.</p></article>
+          <article class="card hover-lift reveal" style="--d:.08s"><div class="ico">&#127970;</div><h3>Corporate</h3><p>Treasury, trade finance and tailored lending for growing companies.</p></article>
+          <article class="card hover-lift reveal" style="--d:.16s"><div class="ico">&#127963;</div><h3>Institutional</h3><p>Custody, advisory and capital-markets services for institutions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="alert-band">
+      <div class="container alert-inner reveal">
+        <div>
+          <small>Protect yourself, protect your money</small>
+          <h3>Think before you click.</h3>
+          <p>Coral Bank will never ask for your password or OTP by message, email or call.</p>
+        </div>
+        <a class="btn btn-light magnetic" href="#hub">Security tips</a>
+      </div>
+    </section>
+
+    <!-- HUB -->
+    <section class="section" id="hub">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Knowledge Hub</span>
+          <h2>Learn something new about money</h2>
+        </div>
+        <div class="hub-filters reveal" id="hubFilters">
+          <button class="chipbtn active" data-f="all">All</button>
+          <button class="chipbtn" data-f="home">Home</button>
+          <button class="chipbtn" data-f="security">Security</button>
+          <button class="chipbtn" data-f="lifestyle">Lifestyle</button>
+        </div>
+        <div class="hub-grid" id="hubGrid"></div>
+      </div>
+    </section>
+
+    <!-- OFFICES -->
+    <section class="section alt" id="offices">
+      <div class="container offices-grid">
+        <div class="reveal">
+          <span class="eyebrow">Offices</span>
+          <h2>Find a Coral branch</h2>
+          <input type="search" id="officeSearch" placeholder="Search a town, e.g. Curepipe">
+          <ul class="office-list" id="officeList"></ul>
+        </div>
+        <div class="map reveal" style="--d:.1s" id="map">
+          <svg viewBox="0 0 400 300" aria-label="Stylised island map">
+            <path d="M80 150c20-60 90-100 160-80 60 15 90 70 70 120-25 55-110 70-170 40-45-22-75-48-60-80z" class="island"/>
+            <g id="pins"></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Talk to us</h2>
+          <p>Hotline <b>202 60 60</b> (demo number). Or leave a message and we will reply.</p>
+        </div>
+        <form class="form reveal" id="contactForm" style="--d:.1s" novalidate>
+          <div class="field"><label for="cName">Name</label><input id="cName" name="name" required></div>
+          <div class="field"><label for="cEmail">Email</label><input id="cEmail" name="email" type="email" required></div>
+          <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" name="message" rows="4" required></textarea></div>
+          <button class="btn magnetic" type="submit">Send message</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><div class="logo light"><span>Coral<b>Bank</b></span></div><p>A fictional bank for a web development demo. Not a real financial institution.</p></div>
+      <div><h4>Personal</h4><a href="#personal">Save</a><a href="#personal">Spend</a><a href="#calculator">Borrow</a></div>
+      <div><h4>Business</h4><a href="#business">SME</a><a href="#business">Corporate</a><a href="#business">Institutional</a></div>
+      <div><h4>Help</h4><a href="#hub">Knowledge Hub</a><a href="#offices">Offices</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="container copy">&copy; 2026 Coral Bank (fictional). Built with HTML, CSS, JavaScript, PHP and Python.</div>
+  </footer>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-label="Demo login">
+      <button class="close" id="closeLogin" aria-label="Close">&times;</button>
+      <h3>Demo login</h3>
+      <p class="muted">Demo only. Use <b>demo</b> / <b>coral123</b>. Never enter real banking details.</p>
+      <form id="loginForm">
+        <div class="field"><label for="lUser">Username</label><input id="lUser" autocomplete="off" required></div>
+        <div class="field"><label for="lPass">Password</label><input id="lPass" type="password" autocomplete="off" required></div>
+        <button class="btn" type="submit">Sign in</button>
+        <p class="form-msg" id="loginMsg" role="status"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
